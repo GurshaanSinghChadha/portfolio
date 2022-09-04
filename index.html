@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/ce4ea2de82.js" crossorigin="anonymous"></script>
+	<title>NERD CODER</title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		border: 0;
+		font-family: 'Poppins',sans-serif;
+		box-sizing: border-box;
+	}
+	#msg{
+		color: #61b752;
+		margin-top: ;
+		display: block;
+	}
+	html{
+		scroll-behavior: smooth;
+	}
+	body{
+		background: #080808;
+		color: #fff;
+	}
+	#header{
+		width: 100%;
+		height: 100vh;
+		background-image: url(bg.png);
+		background-size: cover;
+		background-position: center;
+	}
+	.container{
+		padding: 10px 10%;
+	}
+	nav{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.logo{
+		width: 340px;
+	}
+	nav ul li{
+		display: inline-block;
+		list-style: none;
+		margin: 10px 20px;
+
+	}
+	nav ul li a{
+		color: #fff;
+		text-decoration: none;
+		font-size: 18px;
+		position: relative;
+	}
+	nav ul li a::after{
+		content: '';
+		width: 0;
+		height: 3px;
+		background: #ff004f;
+		position: absolute;
+		left: 0;
+		bottom: -6px;
+		transition: 0.5s;
+	}
+	nav ul li a:hover::after{
+		width: 100%;
+
+	}
+	.header-text{
+		margin-top: 20% ;
+		font-size: 30px;
+	}
+	.header-text h1{
+		font-size: 60px;
+		margin-top: 20px;
+	}
+	.header-text h1 span{
+		color: #ff004f;
+	}
+	/*-----about----*/
+	#about{
+		padding: 80px 0;
+		color: #ababab;
+	}
+	.row{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.about-col-1{
+		flex-basis: 35%;
+
+	}
+	.about-col-1 img{
+		width: 100%;
+		border-radius: 40%;
+	}
+	.about-col-2{
+		flex-basis: 60%;
+	}
+	.sub-title{
+		font-size: 60px;
+		font-weight: 600;
+		color: #fff;
+	}
+	.tab-title{
+		display: flex;
+		margin: 20px 0 40px;
+	}
+	.tab-links{
+		margin-right: 50px;
+		font-size: 18px;
+		font-weight: 500;
+		cursor: pointer;
+		position: relative;
+	}
+	.tab-links::after{
+		content: '';
+		width: 0;
+		height: 3px;
+		background: #ff004f;
+		position: absolute;
+		left: 0;
+		bottom: -8px;
+		transition: 0.5s;
+	}
+	.tab-links.active-link::after{
+		width: 50%;
+	}
+	.tab-content ul li{
+		list-style: none;
+		margin: 10px 0;
+
+	}
+	.tab-content ul li span{
+		color: #b54769;
+		font-size: 14px;
+	}
+	.tab-content{
+		display: none;
+	}
+	.tab-content.active-tab{
+		display: block;
+	}
+	/*---services--*/
+	#services{
+		padding: 30px 0;
+
+	}
+	.service-list{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+		grid-gap:40px ;
+		margin-top: 50px;
+	}
+	.service-list div{
+		background: #262626;
+		padding: 40px;
+		font-size: 13px;
+		font-weight: 300;
+		border-radius: 10px;
+		transition: background 0.5s, transform 0.5s;
+	}
+	.service-list div i{
+		font-size: 50px;
+		margin-bottom: 30px;
+	}
+	.service-list div h2{
+		font-size: 30px;
+		font-weight: 500;
+		margin-bottom: 15px;
+	}
+	.service-list div:hover{
+		background: #ff004f;
+		transform: translateY(-10px);
+	}
+	.service-list div a{
+		text-decoration: none;
+	}
+	/*---------contact*/
+	.contact-left{
+		flex-basis:35% ;
+	}
+	.contact-right{
+		flex-basis:60% ;
+	}
+	.contact-left p{
+		margin-top: 30px;
+	}
+	.contact-left p i{
+		color: #ff004f;
+		margin-right: 15px;
+		font-size: 25px;
+	}
+	.contact-right form{
+		width: 100%;
+	}
+	form input,form textarea{
+		width: 100%;
+		border:0;
+		outline: none;
+		background: #262626;
+		padding: 15px;
+		margin: 35px,0;
+		color: #fff;
+		font-size: 18px;
+		border-radius: 6px;
+	}
+	form .btn{
+		padding: 14px 60px;
+		font-size: 18px;
+		margin-top: 20px;
+		cursor: pointer;
+	}
+	.btn{
+		display: inline-block;
+		background: #ff004f;
+	}
+	.fa-solid.fa-bars,.fa-regular.fa-circle-xmark{
+		display: none;
+	}
+	/*--small screen*/
+	
+	
+	
+	@media only screen and (max-width: 600px){
+		
+		.header-text{
+			margin-top: 100%;
+			font-size: 16px;
+		}
+		.header-text h1{
+			font-size: 30px;
+		}
+		.fa-regular.fa-circle-xmark,.fa-solid.fa-bars{
+			display: block;
+			font-size: 25px;
+		}
+		nav ul{
+			background: #ff004f;
+			position: fixed;
+			top: 0;
+			right: -200px;
+			width: 200px;
+			height: 100vh;
+			padding-top: 50px;
+			z-index: 2;
+			transition: right 0.5s;
+		}
+		nav ul li{
+			display: block;
+			margin: 25px;
+		}
+		nav ul .fa-circle-xmark{
+			position: absolute;
+			top: 25px;
+			left: 25px;
+			cursor: pointer;
+		}
+		nav img{
+			max-width: 50%;
+		}
+		.sub-title{
+			font-size: 40px;
+		}
+		.about-col-1,.about-col-2{
+			flex-basis: 100%;
+		}
+		.about-col-2{
+			font-size: 14px;
+		}
+		.tab-links{
+			font-size: 16px;
+			margin-right: 20px;
+		}
+	}
+</style>
+<body>
+<div id="header">
+	<div class="container">
+		<nav>
+			<img src="logo.png" class="logo">
+			<ul id="sidemenu">
+				<li><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+			</ul>
+			<i class="fa-solid fa-bars" onclick="openmenu()"></i>
+		</nav>
+		<div class="header-text">
+			<p>Python Coder/Web designer</p>
+			<h1>Hi, I'm <span>NERD</span><br>Coder From India</h1>
+		</div>
+	</div>
+</div>
+<!----about----->
+<div id="about">
+	<div class="container">
+		<div class="row">
+			<div class="about-col-1"><img src="logo.png"></div>
+			<div class="about-col-2">
+				<h1 class="sub-title">About Me</h1>
+				<p>After my work day ends each day, I work on hobbies that are based on computers and technology. I am a volunteer at a local community technology venture that aims to bring high-tech devices to low-income neighborhoods. I work with local vendors to get technology donations onto a portable technology bus that visits various parts of the city several times a week. On the bus, I assist young people and the elderly with getting connected.</p>
+				<div class="tab-title">
+					<p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+					<p class="tab-links" onclick="opentab('experience')">Experience</p>
+					<p class="tab-links" onclick="opentab('education')">Education</p>
+				</div>
+				<div class="tab-content active-tab" id="skills"><ul>
+					<li><span>Python Programmer</span><br>Building Prediction Models</li>
+					<li><span>Web Development</span><br>Website Development</li>
+					<li><span>UI/UX</span><br>Designing Web/App interface</li>
+				</ul></div>
+				<div class="tab-content" id="experience"><ul>
+					<li><span>2018-current</span><br>Free Lancer</li>
+					<li><span>2020</span><br> ATL TECH FEST I RUNNER-UP</li>
+				</ul></div>
+				<div class="tab-content" id="education"><ul>
+					<li><span>2020-2022</span><br>Python Certification</li>
+					<li><span>2007-2023</span><br>Schooling</li>
+					<li><span>2018</span><br>Website Development</li>
+				</ul></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!----services----------->
+<div id="services">
+<div class="container">
+	<h1 class="sub-title">MY Services</h1>
+	<div class="service-list">
+		<div>
+			<i class="fa-solid fa-code"></i>
+			<h2>Website Development</h2>
+			<p>I can create your website for cheap</p>
+		</div>	
+		<div>
+			<i class="fa-solid fa-code"></i>
+			<h2>Website Maintainance</h2>
+			<p>I can maintain your website for cheap</p>
+		</div>
+		<div>
+			<i class="fa-brands fa-python"></i>
+			<h2>Prediction Model</h2>
+			<p>I can create a Prediction Model for cheap</p>
+		</div>	
+		<div>
+			<i class="fa-brands fa-uikit"></i>
+			<h2>UI/UX</h2>
+			<p>I can create designs for you for cheap</p>
+		</div>			
+	</div>
+</div>
+</div>
+<!--------------contact----->
+<div id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="contact-left">
+				<h1 class="sub-title">Contact Me</h1>
+				<p><i class="fa-solid fa-envelope"></i>casmguru@gmail.com</p>
+				<p><i class="fa-solid fa-phone"></i>8569892912</p>
+
+			</div>
+			<div class="contact-right">
+				<form name="submit-to-google-sheet">
+					<input type="text" name="Name" placeholder="Your Name" required>
+					<input type="email" name="Email" placeholder="Your Email" required>
+					<textarea name="message" rows="6" placeholder="Drop Your Message"></textarea>
+					<button type="submit" class="btn">Submit</button>
+				</form>
+				<span id="msg"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	var tablinks = document.getElementsByClassName("tab-links");
+
+    var tabcontents = document.getElementsByClassName("tab-content");
+
+    function opentab(tabname){
+    	for (tablink of tablinks) {
+    		tablink.classList.remove("active-link");
+    	} 
+    	for (tabcontent of tabcontents) { 
+    		tabcontent.classList.remove("active-tab");
+    	} 
+    	event.currentTarget.classList.add("active-link"); 
+    	document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script type="text/javascript">
+	var sidemeu = document.getElementById("sidemenu");
+	function openmenu(){ 
+		sidemeu.style.right = "0";
+	}
+	function closemenu(){
+		sidemeu.style.right="-200px";
+	}
+</script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwGNXUUW044BWbTfSwd2c0pZc9MApbPpILWkRpDZs2XxuuRfbX895dDQgle2u26r6vT/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+      	msg.innerHTML = "Message sent sucessfully"
+      	setTimeout(function(){
+      		msg.innerHTML=""
+      	},5000)
+      	form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
